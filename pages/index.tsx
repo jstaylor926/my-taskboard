@@ -5,17 +5,13 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 const Home: NextPage = () => {
   return (
-   <div>
+   <div className={styles.container}>
      <Head>
        <title>JTs TaskBoard </title>
      </Head>
      <div>
         <div>
-          <ul>
-            <li>
-              <Link href='/dashboard'>Dashboard</Link>
-            </li>
-          </ul>
+          <h1>TaskBoard</h1>
         </div>
      </div>
    </div>
