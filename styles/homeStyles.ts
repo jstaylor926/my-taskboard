@@ -1,13 +1,22 @@
 import styled from 'styled-components';
 
-export const LinkContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+export const ContentContainer = styled.div`
+
+
 `
 
-export const LinkCard = styled.div`
-    border: 1rem solid black;
-    height: 20%;
-    width: 20%;
-`
+export const LinkContainer = styled.div`
+  margin: 2em;
+  height: 100%;
+  width: 100%;
+`;
+export const AppHeader = styled.div``;
+export const HeaderText = styled.div``;
+
+export const AppContainer = styled.div`
+  align-items: flex-start;
+  background-color: #3179ba;
+  display: block;
+  padding: 20px;
+  flex-wrap: nowrap;
+`;

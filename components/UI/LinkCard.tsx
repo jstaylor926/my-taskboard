@@ -1,32 +1,30 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { LinkCardType } from './ui-types';
-import { LinkCardContainer, LinkHeader, LinkTitle, LinkDescription, LinkPath, LinkPathContainer } from './styles';
-
+import { LinkCardContainer, LinkHeader, LinkTitle, LinkBody, LinkDescription, LinkPath, LinkPathContainer } from './styles';
+import styles from './uiStyles.module.css';
 
 const LinkCard = ({ title, link, linkPath, description }: LinkCardType) => {
     return (
-        <LinkCardContainer>
-            <LinkHeader>
+        <div className={styles.linkCard}>
+            <div className={styles.linkHeader}>
                 <span>
-                    <LinkTitle>{title}</LinkTitle>
+                    <div className={styles.title}>{title}</div>
                 </span>
-            </LinkHeader>
-            <div className='linkContent'>
-                <div className='description'>
+            </div>
+            <div className={styles.linkContent}>
+                <div className={styles.linkDescription}>
                     {description}
                 </div>
-                <div className='link'>
-                    <button>
+                <div className={styles.link} onClick={() => console.log(link)} >
                         <Link href={link}>
-                            <a className='linkText'>
+                            <div className={styles.linkText}>
                                 {linkPath}
-                            </a>
+                            </div>
                         </Link>
-                    </button>
                 </div>
             </div>
-        </LinkCardContainer>
+        </div>
     )
 }
 
