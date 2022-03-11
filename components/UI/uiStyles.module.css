@@ -2,7 +2,8 @@
     width: 100%;
     height: 100%;
     padding: 1rem;
-    border: black solid 0.3rem;
+    box-shadow: #66bf3c 1px 1px 2px 1px;
+    /*border: black solid 0.3rem;*/
 }
 .linkHeader {
     border-right: black solid 0.3rem;
@@ -17,17 +18,18 @@
 }
 
 .linkContent {
-    border: red solid 0.1rem;
     height: 100%;
     overflow-y: auto;
 }
 
 .linkDescription {
-    border: blue solid 0.5rem;
+    padding: 0.5rem;
+    margin-top:1.2rem;
+    margin-bottom: 2.5rem;
 }
 
 .link {
-    border: green solid 0.3rem;
+    box-shadow: #66bf3c 1px 1px 2px 1px;
     text-align: center;
     margin: 1rem;
     cursor: pointer;

@@ -1,16 +1,24 @@
 import React from 'react'
-import AddNewNote from '../../components/Notes/AddNewNote';
-import {useAppState} from "../../components/Notes/state/context";
-import Column from "../../components/UI/Column";
 import styles from './notes.module.css';
+import MainButton from "../../components/Notes/MainButton";
 
 const Notes = () => {
-    const { notes } = useAppState()
 
     return (
         <div className={styles.notes}>
-            <h1>Add Note</h1>
-           
+           <div className={styles.notesHeader}>
+               <h1>Notes Page</h1>
+           </div>
+            <div className={styles.decision}>
+                <div className={styles.decisionRow}>
+                <div className={styles.left}>
+                    <MainButton path='view' decision='View Notes' />
+                </div>
+                    <div className={styles.right}>
+                        <MainButton path='create' decision='Create Notes' />
+                    </div>
+                </div>
+            </div>
         </div >
     )
 }

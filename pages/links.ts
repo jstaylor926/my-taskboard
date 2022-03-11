@@ -4,25 +4,25 @@ export const links: LinkCardType[] = [
     {
         title: 'Tasks',
         link: '/tasks/tasks',
-        description: 'Shit I have to do',
-        linkPath: 'Go to tasks'
+        description: 'Create tasks. Complete tasks. Remove Tasks. No tasks remaining? Have a drink, enjoy the rest of the day.',
+        linkPath: 'Go to Tasks'
     },
     {
         title: 'Notes',
         link: '/notes/notes',
-        description: 'All the notes. Will I read them again. Probably not. READ THEM!!!! What is the point if you do not',
-        linkPath: 'check your notes'
+        description: 'Better notes mean better learning. Remind yourself to read the notes you have taken',
+        linkPath: 'Go to Notes'
     },
     {
         title: 'Planner',
         link: '/planner/planner',
         description: 'Make a plan. Write it down. Do it. Repeat. Die',
-        linkPath: 'plan away'
+        linkPath: 'Go to Planner'
     },
     {
         title: 'Calendar',
         link: '/calendar/calendar',
-        description: 'Things I can not forget, must attend. That is all',
-        linkPath: 'what going on'
+        description: 'Things I can not forget. Events coming up. A calendar.',
+        linkPath: 'Go to Calender'
     }
 ]

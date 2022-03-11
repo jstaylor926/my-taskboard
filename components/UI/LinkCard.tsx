@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { LinkCardType } from './ui-types';
-import { LinkCardContainer, LinkHeader, LinkTitle, LinkBody, LinkDescription, LinkPath, LinkPathContainer } from './styles';
 import styles from './uiStyles.module.css';
 
 const LinkCard = ({ title, link, linkPath, description }: LinkCardType) => {
