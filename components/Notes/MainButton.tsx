@@ -7,13 +7,13 @@ interface MainButtonProps {
     path: string;
     decision: string;
 }
-const MainButton = ({path, decision}: MainButtonProps) => {
+const MainButton = ({ path, decision }: MainButtonProps) => {
     return (
-        <div className={styles.mainButton}>
-            <Link href={path}>
-                {decision}
-            </Link>
-        </div>
+        <Link href={path}>
+            <div className={styles.mainButton}>
+                <span className={styles.btnText}>{decision}</span>
+            </div>
+        </Link>
     )
 }
 

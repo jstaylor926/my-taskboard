@@ -11,10 +11,10 @@ const Notes = () => {
            </div>
             <div className={styles.decision}>
                 <div className={styles.decisionRow}>
-                <div className={styles.left}>
+                <div className={styles.rowContent}>
                     <MainButton path='view' decision='View Notes' />
                 </div>
-                    <div className={styles.right}>
+                    <div className={styles.rowContent}>
                         <MainButton path='create' decision='Create Notes' />
                     </div>
                 </div>

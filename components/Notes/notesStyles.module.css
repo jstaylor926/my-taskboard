@@ -1,0 +1,14 @@
+
+.mainButton {
+    border: 1px solid black;
+    padding: 5rem;
+    width: 100%;
+    height: 100%;
+    margin-top: 3rem;
+    cursor: pointer;
+}
+.btnText {
+    color: #0d912e8e;
+    font-weight: 700;
+    font-size: larger;
+}
