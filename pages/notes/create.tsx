@@ -1,9 +1,15 @@
 import * as React from 'react';
 import styles from './notes.module.css'
+import type { NextPage } from 'next'
+import CreateNote from '../../components/Notes/CreateNote';
 
 
-export default function CreateNote() {
+const CreateNotePage = () =>{
     const [createNote, setCreateNote] = React.useState(false);
+
+    if( createNote ){
+        return <div>Hi</div>
+    }
 
     return (
         <div className={styles.createNote}>
@@ -18,11 +24,14 @@ export default function CreateNote() {
                     </div>
                 </div>
             </div>
+            {/* <CreateNote subject='' note='' formSubmit={} onChange={}/> */}
         <div className={styles.createBtn}>
-            <button onClick={() => console.log('hi')}>
-                Create
+            <button onClick={() => setCreateNote(true)}>
+                Create New Note
             </button>
         </div>       
         </div>
     )
 }
+
+export default CreateNotePage;

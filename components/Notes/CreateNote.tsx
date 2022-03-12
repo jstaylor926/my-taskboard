@@ -5,9 +5,10 @@ interface CreateNoteProps {
     subject: string;
     note: string;
     formSubmit: any;
+    onChange: any;
 }
 
-const CreateNote = ({subject, note, formSubmit}: CreateNoteProps) => {
+const CreateNote = ({subject, note, formSubmit, onChange}: CreateNoteProps) => {
     return (
          <div className={styles.createContainer}>
                 <form onSubmit={formSubmit}>
@@ -17,7 +18,7 @@ const CreateNote = ({subject, note, formSubmit}: CreateNoteProps) => {
                     </div>
                     <div className={styles.textContainer}>
                         <label htmlFor="text">Note:</label>
-                        <input type="text" value={note}  />
+                       <textarea name="note" id="rows" cols={30} rows={10} value={note} onChange={onChange} />
                     </div>
                     <div className={styles.submitBtn}>
                         <button type='submit'>
