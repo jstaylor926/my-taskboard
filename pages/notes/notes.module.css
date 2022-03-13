@@ -38,14 +38,13 @@
 
 .createNote {
     height: 100vh;
-    padding: 1rem 1rem;   
+    padding: 1rem 1rem;
+    border: 1px solid black;
 }
+
 .createContainer {
     border: solid red 2px;
 }
-.subjectContainer {
-    border: green solid 2px;
-}
-.textContainer {
-    border: blue solid 2px;
+.createNav {
+    border: aqua 0.5rem solid;
 }

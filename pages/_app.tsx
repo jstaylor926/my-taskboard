@@ -1,12 +1,12 @@
 import '../styles/globals.css'
 import type {AppProps} from 'next/app'
-import {NoteStateProvider} from "../components/Notes/state/context";
+// import {NoteStateProvider} from "../components/Notes/state/context";
 
 function MyApp({Component, pageProps}: AppProps) {
     return (
-        <NoteStateProvider>
+        // <NoteStateProvider>
             <Component {...pageProps} />
-        </NoteStateProvider>
+        // </NoteStateProvider>
     )
 }
 

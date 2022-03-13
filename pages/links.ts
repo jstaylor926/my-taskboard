@@ -1,5 +1,14 @@
 import { LinkCardType } from "../components/UI/ui-types";
-
+export const RoutePath = {
+    HOME: '/',
+    NOTES: '/notes/notes',
+    CALENDAR: '/calendar/calendar',
+    PLANNER: '/planner/planner',
+    TASKS: '/tasks/tasks',
+    CREATE_NOTE: '/notes/create',
+    EDIT_NOTE: '/notes/edit',
+    VIEW_NOTE: '/notes/view'
+}
 export const links: LinkCardType[] = [
     {
         title: 'Tasks',

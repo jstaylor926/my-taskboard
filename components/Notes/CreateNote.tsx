@@ -10,23 +10,26 @@ const CreateNote = ({}: CreateNoteProps) => {
     const [note, setNote] = React.useState('');
 
     return (
-         <div className={styles.createContainer}>
+        <div className={styles.createContainer}>
+            <div className={styles.createFormContainer}>
                 <form>
-                <div className={styles.subjectContainer}>
-                    <label htmlFor="subject">Subject:</label>
-                    <input type="text" value={subject} onChange={(e) => console.log(e.target.value)}  />
+                    <div className={styles.categorySelect}>
+                        <select>
+                            <option />
+                        </select>
                     </div>
-                    <div className={styles.textContainer}>
-                        <label htmlFor="text">Note:</label>
-                       <textarea name="note" id="rows" cols={30} rows={10} value={note} onChange={(e) => console.log(e.target.value)} />
+                    <div className={styles.titleInput}>
+                        <label htmlFor=""></label>
+                        <input type="text"/>
                     </div>
-                    <div className={styles.submitBtn}>
-                        <button type='submit'>
-                            Save
-                        </button>
+                    <div className={styles.noteInput}>
+                        <label htmlFor=""></label>
+                        <input type="text"/>
                     </div>
+
                 </form>
             </div>
+        </div>
     )
 }
 
