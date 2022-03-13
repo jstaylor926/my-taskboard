@@ -7,10 +7,9 @@ import CreateNote from '../../components/Notes/CreateNote';
 const CreateNotePage = () =>{
     const [createNote, setCreateNote] = React.useState(false);
 
-    if( createNote ){
-        // return <CreateNote onCreate={} />
+    if( createNote ) {
+        return <h1>Hi</h1>
     }
-
     return (
         <div className={styles.createNote}>
             <div className={styles.notesHeader}>
