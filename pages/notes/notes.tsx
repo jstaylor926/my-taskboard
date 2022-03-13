@@ -1,9 +1,11 @@
 import React from 'react'
 import styles from './notes.module.css';
 import MainButton from "../../components/Notes/MainButton";
+import CreateNote from "../../components/Notes/CreateNote";
+import {useNoteState} from "../../components/Notes/state/context";
 
 const Notes = () => {
-
+    const { notes } = useNoteState();
     return (
         <div className={styles.notes}>
            <div className={styles.notesHeader}>

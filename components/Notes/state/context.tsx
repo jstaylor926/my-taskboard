@@ -1,44 +1,60 @@
-import {createContext, FC, useContext} from "react";
+import { createContext, useContext, FC} from "react";
+
+type NoteStateContextProps = {
+    notes: NotesList[];
+    getNotesByListId(id: string): Note[];
+}
+
+const NoteStateContext = createContext<NoteStateContextProps>(
+    {} as NoteStateContextProps
+)
 
 type Note = {
     id: string;
-    text: string;
-    subject?: string;
+    subject: string;
+    note: string;
 }
 
-type List = {
+type NotesList = {
     id: string;
     text: string;
     notes: Note[];
 }
 
 export type NoteState = {
-    notes: List[];
+    notes: NotesList[];
 }
 
 const noteData: NoteState = {
     notes: [
         {
-            id: 'n1',
-            text: 'This is my first note in the notebook project I am making',
-            notes: [{id: '1', subject: 'Subject One', text: 'Where does this text get displayed'}]
+            id: '0',
+            text: 'Tech Stuff',
+            notes: [{
+                id: 'a1',
+                subject: 'Note one',
+                note: 'this is the first note I write'
+            }]
+        },
+        {
+            id: '1',
+            text: 'Random',
+            notes: [{
+                id: 'a2',
+                subject: 'Note two',
+                note: 'this is the second note I am writing'
+            }]
         }
     ]
 }
 
-type NoteStateContextProps = {
-    notes: List[];
-    getNotesByListId(id: string): Note[];
-}
-
-const NoteStateContext = createContext<NoteStateContextProps>({} as NoteStateContextProps)
-
-export const NoteStateProvider: FC = ({children}) => {
+export const NoteStateProvider: FC = ({ children }) => {
     const { notes } = noteData;
 
     const getNotesByListId = (id: string) => {
-        return notes.find((list) => list.id === id)?.notes || []
+        return notes.find((note) => note.id === id)?.notes || []
     }
+
     return (
         <NoteStateContext.Provider value={{notes, getNotesByListId}}>
             {children}
@@ -46,6 +62,6 @@ export const NoteStateProvider: FC = ({children}) => {
     )
 }
 
-export const useAppState = () => {
+export const useNoteState = () => {
     return useContext(NoteStateContext)
 }

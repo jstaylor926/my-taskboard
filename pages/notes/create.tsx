@@ -8,7 +8,7 @@ const CreateNotePage = () =>{
     const [createNote, setCreateNote] = React.useState(false);
 
     if( createNote ){
-        return <div>Hi</div>
+        // return <CreateNote onCreate={} />
     }
 
     return (
