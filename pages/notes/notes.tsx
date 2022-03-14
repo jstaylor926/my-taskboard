@@ -1,32 +1,38 @@
-import React from 'react'
+import * as React from 'react'
 import styles from './notes.module.css';
-import MainButton from "../../components/Notes/MainButton";
-import { RoutePath} from "../links";
-import CreateNote from "../../components/Notes/CreateNote";
-import Link from "next/link";
 import MainNavbar from "../../components/UI/MainNavbar";
-
+import NoteDisplay from '../../components/Notes/NoteDisplay';
+import AddNewNote from '../../components/Notes/AddNewNote';
+import { useNoteState } from '../../components/Notes/state/context';
 
 
 const Notes = () => {
-
+    const { data } = useNoteState();
+    const [notes, setNotes] = React.useState<any>([]) 
+    console.log(data)
     return (
         <div className={styles.notes}>
            <MainNavbar />
            <div className={styles.notesHeader}>
                <h1>Notes Page</h1>
+               {/* {
+                   notes.map((note: any) => (
+                       <NoteDisplay />
+                   ))
+               } */}
            </div>
-            <div className={styles.decision}>
-                <div className={styles.decisionRow}>
-                <div className={styles.rowContent}>
-                    <MainButton path={RoutePath.VIEW_NOTE} decision='View Notes' />
-                </div>
-                    <div className={styles.rowContent}>
-                        <MainButton path={RoutePath.CREATE_NOTE} decision='Create Notes' />
+           <div className={styles.notesContent}>
+                <div className={styles.viewNoteContainer}>
+                    <span>View Notes</span>
+                    <div>
+                        <NoteDisplay data={data}  /> 
                     </div>
                 </div>
-            </div>
-        </div >
+                <div className={styles.createNoteContainer}>
+                    <span>Create Note</span>
+                </div>
+           </div>
+       </div >
     )
 }
 

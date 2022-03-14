@@ -11,40 +11,25 @@
      color: green;
  }
 
- .decision {
+ .notesContent {
      height: 100%;
      min-height: 40vh;
-     width: 75%;
+     width: 100%;
      border: 1px solid red;
-     margin-top: 15%;
      border-radius: 20px;
- }
-
- .decisionRow {
      display: flex;
      flex-direction: row;
-     justify-content: space-around;
  }
 
- .rowContent {
-     height: 100%;
-     min-height: 30vh;
-     width: 50%;
-     text-align: center;
-     margin: 2rem;
-     justify-content: center;
-     
- }
 
-.createNote {
-    height: 100vh;
-    padding: 1rem 1rem;
-    border: 1px solid black;
-}
 
-.createContainer {
+.createNoteContainer {
     border: solid red 2px;
+    padding: 1rem;
+    width: 50%;
 }
-.createNav {
-    border: aqua 0.5rem solid;
+.viewNoteContainer {
+    border: solid green 2px;
+    padding: 1rem;
+    width: 50%;
 }

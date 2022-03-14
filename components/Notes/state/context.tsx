@@ -1,65 +1,54 @@
 import * as React from 'react';
-
+import { NoteList, Note } from '../noteTypes';
+import { noteReducer, NoteState } from './reducer';
 
 type NoteContextProps = {
-    data: Category[];
-    getNoteById(id: string | number): Category[];
+    data: NoteList[];
+    getNoteById(id: string | number): Note[];
 }
 
-const NoteStateContext = React.createContext<NoteContextProps>(
+const NoteContext = React.createContext<NoteContextProps>(
     {} as NoteContextProps
 )
-type Note = {
-    id: string | number;
-    title: string;
-    // date?: Date;
-    text: string;
-}
 
-type Category = {
-    id: string | number;
-    category: string;
-    notes: Note[];
-}
-
-export type NoteState = {
-    data: Category[];
-}
-
-
-const noteData: NoteState = {
+const notesData: NoteState = {
     data: [
         {
-            id: '0',
-            category: 'Tech Stuff',
-            notes: [{
-                id: 'a0',
-                title: 'Note one',
-                text: 'this is the first note I write'
-            }]
+            id: 'a',
+            title: 'First Note',
+            notes: [{ id: 'a1', text: 'This is the first note that I am making', title: 'Title One' }]
         },
         {
-            id: '1',
-            category: 'Random',
-            notes: [{
-                id: 'a1',
-                title: 'Note two',
-                text: 'this is the second note I am writing'
-            }]
+            id: 'b',
+            title: 'Second Note',
+            notes: [
+                { 
+                    id: 'b1', 
+                    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae odio quam quia illo quidem hic blanditiis quasi illum eius voluptates.", 
+                    title: 'Title One' 
+                },
+                {
+                    id: 'b2',
+                    text: 'second note, second box',
+                    title: 'Title Two - Box Two'
+                }
+            ]
         }
     ]
 }
+export const NoteStateProvider: React.FC = ({ children }) => {
+    const { data } = notesData;
 
-// export const NoteProvider: React.FC = ({children}) => {
-//     const { data } = noteData;
-//
-//     const getNoteById = (id: string) => {
-//         return data.find((category) => category.id === id)?.notes || []
-//     }
-//     return (
-//         <NoteStateContext.Provider value={{data, getNoteById}}>
-//             {children}
-//         </NoteStateContext.Provider>
-//     )
-// }
-//
+    const getNoteById = (id: any) => {
+        return data.find((note) => note.id === id)?.notes || []
+    }
+    return (
+        <NoteContext.Provider value={{ data, getNoteById }}>
+            {children}
+        </NoteContext.Provider>
+    )
+}
+
+export const useNoteState = () => {
+    return React.useContext(NoteContext)
+}

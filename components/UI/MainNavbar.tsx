@@ -1,12 +1,12 @@
 import * as React from 'react';
-import styles from "../../pages/notes/notes.module.css";
+import styles from "./uiStyles.module.css";
 import Link from "next/link";
 import {RoutePath} from "../../pages/links";
 
 const MainNavbar = () => {
     return (
         <div className={styles.createNav}>
-            <nav>
+            <nav className={styles.navbar}>
                 <ul>
                     <li><Link href='/'>Home</Link></li>
                     <li><Link href={RoutePath.NOTES}>Notes</Link></li>

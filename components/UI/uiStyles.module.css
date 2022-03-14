@@ -34,3 +34,15 @@
     margin: 1rem;
     cursor: pointer;
 }
+
+.navbar {
+    display: flex;
+}
+.navbar ul {
+    display: flex;
+}
+.navbar ul>li{
+    margin: 1rem;
+    list-style: none;
+    font-weight: bold;
+}

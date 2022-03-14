@@ -1,36 +1,32 @@
-import * as React from 'react';
-import styles from './notesStyles.module.css';
-
-interface CreateNoteProps {
-    onCreate: any;
+import * as React from 'react'
+import { Note } from './noteTypes';
+import {useFocus} from '../../utils/useFocus';
+type CreateNoteProps = {
+    onAdd(text: string): void;
 }
+function CreateNote({onAdd}: CreateNoteProps) {
+    const [text, setText] = React.useState('');
+    const inputRef = useFocus();
 
-const CreateNote = ({}: CreateNoteProps) => {
-    const [subject, setSubject] = React.useState('');
-    const [note, setNote] = React.useState('');
-
-    return (
-        <div className={styles.createContainer}>
-            <div className={styles.createFormContainer}>
-                <form>
-                    <div className={styles.categorySelect}>
-                        <select>
-                            <option />
-                        </select>
-                    </div>
-                    <div className={styles.titleInput}>
-                        <label htmlFor=""></label>
-                        <input type="text"/>
-                    </div>
-                    <div className={styles.noteInput}>
-                        <label htmlFor=""></label>
-                        <input type="text"/>
-                    </div>
-
-                </form>
-            </div>
+  return (
+    <div>
+        <div>
+            <span>Create Note</span>
         </div>
-    )
+        <div>
+            <textarea 
+                value={text} 
+                onChange={(e) => setText(e.target.value)} 
+                ref={inputRef}
+            />
+        </div>
+        <div>
+            <button onClick={() => onAdd(text)}>
+                Create
+            </button>
+        </div>
+    </div>
+  )
 }
 
-export default CreateNote;
+export default CreateNote
