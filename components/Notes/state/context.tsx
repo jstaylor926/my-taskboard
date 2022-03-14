@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { NoteList, Note } from '../noteTypes';
 import { noteReducer, NoteState } from './reducer';
+import {NoteAction} from './actions';
 
 type NoteContextProps = {
     data: NoteList[];

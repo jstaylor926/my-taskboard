@@ -10,6 +10,13 @@ export type NoteAction = |{
         text: string;
     }
 }
+|{
+    type: "MOVE_LIST";
+    payload: {
+        draggedId: string;
+        hoverId: string;
+    }
+}
 
 export const addNote = (title: string, text: string, noteId: string): NoteAction => ({
     type: "ADD_NOTE",
@@ -25,3 +32,13 @@ export const addList = (text: string): NoteAction => ({
     payload: text
 })
 
+export const moveList = (
+    draggedId: string,
+    hoverId: string
+): NoteAction => ({
+    type: "MOVE_LIST",
+    payload: {
+        draggedId,
+        hoverId
+    }
+})
