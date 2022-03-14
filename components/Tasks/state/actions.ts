@@ -1,3 +1,6 @@
+import { DragItem } from '../DragItem';
+
+
 export type TaskAction =
     | {
     type: "ADD_LIST"
@@ -14,6 +17,20 @@ export type TaskAction =
         hoverId: string
     }
 }
+    | {
+    type: "SET_DRAGGED_ITEM"
+    payload: DragItem | null
+}
+    | {
+    type: "MOVE_TASK"
+    payload: {
+        draggedItemId: string
+        hoveredItemId: string | null
+        sourceColumnId: string
+        targetColumnId: string
+    }
+}
+
 
 export const addTask = (text: string, listId: string): TaskAction => ({
     type: "ADD_TASK",
@@ -36,5 +53,27 @@ export const moveList = (
     payload: {
         draggedId,
         hoverId
+    }
+})
+
+export const setDraggedItem = (
+    draggedItem: DragItem | null
+): TaskAction => ({
+    type: "SET_DRAGGED_ITEM",
+    payload: draggedItem
+})
+
+export const moveTask = (
+    draggedItemId: string,
+    hoveredItemId: string | null,
+    sourceColumnId: string,
+    targetColumnId: string
+): TaskAction => ({
+    type: "MOVE_TASK",
+    payload: {
+        draggedItemId,
+        hoveredItemId,
+        sourceColumnId,
+        targetColumnId
     }
 })

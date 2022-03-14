@@ -6,12 +6,14 @@ import {AddNewItem} from "../../components/Tasks/AddNewItem";
 import {useTaskState} from "../../components/Tasks/state/context";
 import {addList} from '../../components/Tasks/state/actions';
 import styles from './styles.module.css';
+import {CustomDragLayer} from "../../components/Tasks/CustomDragLayer";
 
 
 const Tasks = () => {
     const { lists, dispatch } = useTaskState()
   return (
       <div className={styles.tasks}>
+          <CustomDragLayer />
       <AppContainer>
           {lists.map((list) => (
               <Column text={list.text} key={list.id} id={list.id} />
